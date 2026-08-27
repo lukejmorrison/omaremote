@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "id": "wizwam.omaremote",
+  "name": "OmaRemote",
+  "version": "1.3.0",
+  "author": "Wizwam",
+  "license": "MIT",
+  "homepage": "https://github.com/lukejmorrison/omaremote",
+  "description": "Remote access hub: RustDesk, TeamViewer, Tailscale SSH, and local VNC/noVNC. IDs and IPs stay hidden until you click the eye. Also labels other bar icons on hover.",
+  "kinds": [
+    "bar-widget",
+    "service"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "barWidget": "Panel.qml",
+    "service": "Service.qml"
+  },
+  "barWidget": {
+    "displayName": "OmaRemote",
+    "description": "RustDesk, TeamViewer, Tailscale SSH, and VNC/noVNC. Secrets stay masked until revealed.",
+    "category": "Network",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "refreshIntervalSec": 15,
+      "showRustdesk": true,
+      "showTeamviewer": true,
+      "showTailscaleSsh": true,
+      "showVnc": true
+    },
+    "schema": [
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 5,
+        "max": 3600,
+        "step": 5,
+        "defaultValue": 15
+      },
+      {
+        "key": "showRustdesk",
+        "type": "boolean",
+        "label": "Show RustDesk",
+        "description": "RustDesk ID and server status",
+        "defaultValue": true
+      },
+      {
+        "key": "showTeamviewer",
+        "type": "boolean",
+        "label": "Show TeamViewer",
+        "description": "TeamViewer ID and daemon status",
+        "defaultValue": true
+      },
+      {
+        "key": "showTailscaleSsh",
+        "type": "boolean",
+        "label": "Show Tailscale SSH",
+        "description": "Tailscale SSH login and IPv4",
+        "defaultValue": true
+      },
+      {
+        "key": "showVnc",
+        "type": "boolean",
+        "label": "Show VNC / noVNC",
+        "description": "Local VNC and noVNC listeners",
+        "defaultValue": true
+      }
+    ],
+    "aliases": [
+      "omaremote",
+      "remote",
+      "rustdesk",
+      "teamviewer",
+      "vnc",
+      "novnc",
+      "ssh"
+    ]
+  }
+}
