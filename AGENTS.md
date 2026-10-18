@@ -18,3 +18,5 @@ keeps them dotted.
 cd /home/luke/dev/omaremote
 ./scripts/test.sh
 ```
+
+- This repo is public. When a change alters anything a user can see, add or refresh a screenshot in README.md (images in docs/screenshots/, relative links). The README is the marketing.
